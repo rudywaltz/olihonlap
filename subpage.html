@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>olikovacs</title>
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.8.2/baguetteBox.css">
+		<link href="https://fonts.googleapis.com/css?family=Oswald:400,500" rel="stylesheet">
+		<link rel="stylesheet" href="./style.css">
+	</head>
+	<body>
+		<header>
+			<h1><a href="./index.html">Olikovács</a></h1>
+			<nav>
+				<ul class="menu">
+					<li><a href="#">Munkák</a>
+						<ul>
+							<li>Most/Volt</li>
+							<li>Nekünk is volt</li>
+							<li>Mások múltja</li>
+							<li>Korai munkák</li>
+						</ul>
+					</li>
+					<li><a href="#">CV</a></li>
+					<li><a href="#">Sajtó</a></li>
+				</ul>
+			</nav>
+		</header>
+		<main>
+			<div class="lead">
+				<div class="lead__title">
+					<h2>Mások multja</h2>
+				</div>
+			</div>
+			<div class="content">
+				<div class="description">
+					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ullam, natus, molestias. Rem quod sequi ratione. Illum velit veritatis tempore unde eius, quo sit voluptatum, aspernatur odio eveniet dolor, voluptates perspiciatis.
+				</div>
+					<div class="gallery">
+					    <a href="./img/masok_multja-kenez.jpg" data-caption="Image caption" class="thumbnail">
+								<div class="imagewrap">
+									<img src="./img/masok_multja-kenez.jpg" alt="fwfs">
+								</div>
+					    </a>
+					    <a href="./img/masok_multja_potkereken.jpg" data-caption="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequatur" class="thumbnail">
+								<div class="imagewrap">
+					        <img src="./img/masok_multja_potkereken.jpg" alt="First image" class="positionfix">
+								</div>
+					    </a>
+							<a href="./img/sorozat.jpg" data-caption="Image caption" class="thumbnail">
+								<div class="imagewrap">
+									<img src="./img/sorozat.jpg" alt="First image">
+								</div>
+							</a>
+							<a href="./img/sorozat.jpg" data-caption="Image caption" class="thumbnail">
+								<div class="imagewrap">
+									<img src="./img/sorozat.jpg" alt="First image">
+								</div>
+							</a>
+
+							</a>
+							<a href="./img/sorozat.jpg" data-caption="Image caption" class="thumbnail">
+								<div class="imagewrap">
+									<img src="./img/sorozat.jpg" alt="First image">
+								</div>
+							</a>
+
+
+							<a href="./img/masok_multja_potkereken.jpg" data-caption="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequatur" class="thumbnail">
+							 <div class="imagewrap">
+								 <img src="./img/IMG_0041.jpg" alt="First image" class="positionfix">
+							 </div>
+						 </a>
+							<a href="./img/masok_multja_potkereken.jpg" data-caption="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequatur" class="thumbnail">
+							 <div class="imagewrap">
+								 <img src="./img/IMG_0065.jpg" alt="First image" class="positionfix">
+							 </div>
+						 </a>
+							<a href="./img/masok_multja_potkereken.jpg" data-caption="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequatur" class="thumbnail">
+							 <div class="imagewrap">
+								 <img src="./img/nekunk_is_volt_1.jpg" alt="First image" class="positionfix">
+							 </div>
+						 </a>
+
+							<a href="./img/masok_multja_potkereken.jpg" data-caption="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequatur" class="thumbnail">
+							 <div class="imagewrap">
+								 <img src="./img/masok_multja_potkereken.jpg" alt="First image" class="positionfix">
+							 </div>
+						 </a>
+						 <a href="./img/sorozat.jpg" data-caption="Image caption" class="thumbnail">
+							 <div class="imagewrap">
+								 <img src="./img/sorozat.jpg" alt="First image">
+							 </div>
+						 </a>
+
+						 <a href="./img/masok_multja-kenez.jpg" data-caption="Image caption" class="thumbnail">
+							 <div class="imagewrap">
+								 <img src="./img/masok_multja-kenez.jpg" alt="fwfs">
+							 </div>
+						 </a>
+					</div>
+			</div>
+		</main>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.8.2/baguetteBox.js" charset="utf-8"></script>
+
+		<script type="text/javascript">
+			document.addEventListener("DOMContentLoaded", function() {
+				baguetteBox.run('.gallery', {
+					// noScrollbars: true,
+					overlayBackgroundColor: 'white'
+				});
+			});
+
+			var heightfix = function() {
+				var content = document.querySelector('.content');
+				content.classList.toggle('heightfix');
+			}
+
+
+		</script>
+	</body>
+</html>
