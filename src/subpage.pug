@@ -1,0 +1,28 @@
+extends layout/_layout
+block content
+  - var imagemap = ['masok_multja-kenez', 'masok_multja_potkereken', 'sorozat', 'IMG_0041', 'IMG_0065', 'nekunk_is_volt_1']
+  main
+    .lead
+      .lead__title
+        h2 Mások multja
+    .content
+      .description
+        | Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ullam, natus, molestias. Rem quod sequi ratione. Illum velit veritatis tempore unde eius, quo sit voluptatum, aspernatur odio eveniet dolor, voluptates perspiciatis.
+      .gallery
+        each image in imagemap
+          a.thumbnail(href='./img/' + image + '.jpg', data-caption='Image caption')
+            .imagewrap
+              img(src='./img/' + image + '.jpg', alt='fwfs')
+
+  script(src='https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.8.2/baguetteBox.js', charset='utf-8')
+  script(type='text/javascript').
+    document.addEventListener("DOMContentLoaded", function () {
+      baguetteBox.run('.gallery', {
+        noScrollbars: true,
+        overlayBackgroundColor: 'rgba(100, 100, 100, .8)'
+      });
+    });
+    var heightfix = function () {
+      var content = document.querySelector('.content');
+      content.classList.toggle('heightfix');
+    }
