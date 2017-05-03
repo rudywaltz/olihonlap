@@ -1,6 +1,41 @@
+-
+  var exhibition = [
+  {
+  'exhib' : 'Önálló Kiállítás',
+  'data': {
+  '2017': [
+  {
+  'title': 'Hey, Mother',
+  'place': 'Kelet Kávézó'
+  }
+  ]
+  }
+  },
+  {
+  'exhib': 'Csoportos Kiállítás',
+  'data': {
+  '2017': [
+  {
+  'title': 'OLD SCHOOL – egy riportkiállítás a PTE MK Damjanich utcai periódusáról',
+  'place': 'm21 Galéria, Pécs'
+  }
+  ],
+  '2016':[
+  {
+  'title': 'A képzőművész vajon mi?',
+  'place': 'Stúdió Galéria, Budapest'
+  },
+  {
+  'title': 'Ongoing h/Histories',
+  'place': 'Stúdió Galéria, Budapest'
+  }
+  ]
+  }
+  }
+  ]
+
 html
   head
-    link(rel="stylesheet" href="https://fonts.googleapis.com/css?family=Catamaran:100,300,400")
     link(rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.8.2/baguetteBox.css")
     link(rel="stylesheet" href="css/style.css")
     meta(charset="UTF-8")
@@ -10,11 +45,9 @@ html
       h1
         a(href="./index.html") Olikovacs
       nav
-      ul.menu
-        li
-          a(href="#") Munkák
-        li
-          a(href="#") CV
-        li
-          a(href="#") Sajtó
+        ul.menu
+          li
+            a(href="./subpage.html") Munkák
+          li
+            a(href="./cv.html") Cv
     block content

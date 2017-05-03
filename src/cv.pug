@@ -1,0 +1,28 @@
+extends layout/_layout
+block content
+  main.cv
+    .row
+      .sidebar
+        .profile
+          img.profile__img(src="./img/kovacs_olivia.jpeg")
+      .main
+        h2 Kovács Olívia
+        h3 olivia.kov@gmail.com
+        h3 Született 1986 október 3-án, Budapesten.
+        h3 Budapesten él és dolgozik
+
+    table
+      each data in exhibition
+        tr
+          th(width='240px', align='left') #{data.exhib}
+          th
+        each data2, year in data.data
+          tr
+            td
+            td.date #{year}
+          each info in data2
+            tr
+              td
+              td.data #{info.title},
+                i &nbsp;#{info.place}
+
