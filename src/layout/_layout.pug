@@ -33,9 +33,13 @@
   }
   }
   ]
-
-html
+- var bodyClass = '';
+block vars
+html(class=bodyClass)
   head
+    meta(name="viewport" content="width=device-width, initial-scale=1")
+    block stylesheets
+    link(href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600" rel="stylesheet")
     link(rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.8.2/baguetteBox.css")
     link(rel="stylesheet" href="css/style.css")
     meta(charset="UTF-8")
@@ -43,11 +47,12 @@ html
   body
     header
       h1
-        a(href="./index.html") Olikovacs
+        a(href="./index.html") Oli Kovács
       nav
         ul.menu
           li
             a(href="./subpage.html") Munkák
+            | &nbsp;|&nbsp;
           li
             a(href="./cv.html") Cv
     block content

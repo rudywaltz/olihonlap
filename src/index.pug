@@ -1,3 +1,33 @@
 extends layout/_layout
+block stylesheets
+  link(href='https://npmcdn.com/flickity@2/dist/flickity.css' rel='stylesheet')
+block vars
+  - var bodyClass = 'mainpage';
 block content
-  main
+  .wrap
+    - var carouselItem = ['./img/slider/visszajaro.jpg']
+    - var carouselItemAll = ['./img/IMG_0018.jpg', './img/slider/masok_multja-temetes.jpg', './img/slider/visszajaro.jpg']
+    .carousel-wrapper
+      each image in carouselItem
+        img(src=image)
+    ul.exhibiton
+      li.exhibiton__details.exhibiton__details-prev
+        .e-head Előző Kiállítás:
+        .e-title OLD SCHOOL – egy riportkiállítás a PTE MK Damjanich utcai periódusáról
+        .e-date m21 Galéria, Pécs 2017. január 1 - 2017 február 26
+      li.exhibiton__details.exhibiton__details-actual
+        .e-head Aktuális Kiállítás:
+        .e-title Hey, Mother!
+        .e-date Kelet Kávézó, Budapest 2017. április 26 - 2017 május 16
+      li.exhibiton__details.exhibiton__details-next
+        .e-head Következő Kiállítás:
+        .e-title Schöne Tag!
+        .e-date Wein Gallery, Wein 2017. július 26 - 2017 augusztus 16
+
+
+  script(src='https://npmcdn.com/flickity@2/dist/flickity.pkgd.js')
+  //script.
+    var flkty = new Flickity('.car', {
+      autoPlay: 3000
+    });
+
