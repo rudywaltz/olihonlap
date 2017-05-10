@@ -2,15 +2,47 @@
 
   .wrap {
     display: flex;
+    height: 100%;
   }
-  .carousel-wrapper {
-    height: calc(100% - 50px);
-    display: inline-block;
-    padding: 25px;
+
+  .left-side {
+    background: rgba(#c7c0b9, 0.34);
+    flex-basis: 33.33%;
+    flex-shrink: 0;
+  }
+
+  .image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
 
     img {
-      max-height: 100%;
+      height: auto;
+      width: auto;
+      max-width: calc(100% - 15px);
+      max-height: calc(100% - 15px);
     }
+  }
+
+  .right-side {
+    flex-grow: 1;
+
+    .Wallop-item {
+      height: 100%;
+    }
+  }
+
+  .fixed {
+    z-index: 100;
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+  }
+
+  header {
+    background: none;
+    box-shadow: none;
   }
 }
 

@@ -1,33 +1,76 @@
-extends layout/_layout
+extends layout/_layout-index
 block stylesheets
-  link(href='https://npmcdn.com/flickity@2/dist/flickity.css' rel='stylesheet')
+  link(href='https://cdnjs.cloudflare.com/ajax/libs/wallop/2.4.1/css/wallop.css' rel='stylesheet')
+  link(href='https://cdnjs.cloudflare.com/ajax/libs/wallop/2.4.1/css/wallop--fade.css' rel='stylesheet')
+  script(src='https://cdnjs.cloudflare.com/ajax/libs/wallop/2.4.1/js/Wallop.js')
 block vars
   - var bodyClass = 'mainpage';
 block content
   .wrap
-    - var carouselItem = ['./img/slider/visszajaro.jpg']
-    - var carouselItemAll = ['./img/IMG_0018.jpg', './img/slider/masok_multja-temetes.jpg', './img/slider/visszajaro.jpg']
-    .carousel-wrapper
-      each image in carouselItem
-        img(src=image)
-    ul.exhibiton
-      li.exhibiton__details.exhibiton__details-prev
-        .e-head Előző Kiállítás:
-        .e-title OLD SCHOOL – egy riportkiállítás a PTE MK Damjanich utcai periódusáról
-        .e-date m21 Galéria, Pécs 2017. január 1 - 2017 február 26
-      li.exhibiton__details.exhibiton__details-actual
-        .e-head Aktuális Kiállítás:
-        .e-title Hey, Mother!
-        .e-date Kelet Kávézó, Budapest 2017. április 26 - 2017 május 16
-      li.exhibiton__details.exhibiton__details-next
-        .e-head Következő Kiállítás:
-        .e-title Schöne Tag!
-        .e-date Wein Gallery, Wein 2017. július 26 - 2017 augusztus 16
-
-
-  script(src='https://npmcdn.com/flickity@2/dist/flickity.pkgd.js')
-  //script.
-    var flkty = new Flickity('.car', {
-      autoPlay: 3000
-    });
-
+    .left-side
+      header
+        h1
+          a(href="./index.html") Oli Kovács
+        nav
+          ul.menu
+            li
+              a(href="./subpage.html") Munkák
+            li
+              | &nbsp;|&nbsp;
+            li
+              a(href="./cv.html") Cv
+      .right-side
+        ul.exhibiton
+          li.exhibiton__details.exhibiton__details-prev
+            .e-head Előző Kiállítás:
+            .e-title OLD SCHOOL – egy riportkiállítás a PTE MK Damjanich utcai periódusáról
+            .e-date m21 Galéria, Pécs 2017. január 1 - 2017 február 26
+          li.exhibiton__details.exhibiton__details-actual
+            .e-head Aktuális Kiállítás:
+            .e-title Hey, Mother!
+            .e-date Kelet Kávézó, Budapest 2017. április 26 - 2017 május 16
+          li.exhibiton__details.exhibiton__details-next
+            .e-head Következő Kiállítás:
+            .e-title Schöne Tag!
+            .e-date Wein Gallery, Wein 2017. július 26 - 2017 augusztus 16
+    .right-side
+      - var carouselItem = ['./img/IMG_1189.jpg','./img/IMG_0065.jpg','./img/IMG_0018.jpg', './img/slider/masok_multja-temetes.jpg', './img/slider/visszajaro.jpg']
+      .Wallop.Wallop--fade
+        .Wallop-list
+          each image in carouselItem
+            .Wallop-item
+              .image
+                img(src=image)
+        .fixed
+          button.abs.Wallop-buttonPrevious Previous
+          button.abs.Wallop-buttonNext Next
+  script.
+    (function(){
+      var wallopEl = document.querySelector('.Wallop');
+      var slider = new Wallop(wallopEl);
+      var autoPlayMs = 4500,
+       nextTimeout,
+       loadNext = function() {
+        return
+         var nextIndex = (slider.currentItemIndex + 1) % slider.allItemsArray.length;
+         slider.goTo(nextIndex);
+       };
+       nextTimeout = setTimeout(function() {
+         loadNext();
+       }, autoPlayMs);
+       slider.on('change', function() {
+         clearTimeout(nextTimeout);
+         nextTimeout = setTimeout(function() {
+           loadNext();
+         }, autoPlayMs);
+       });
+       // the code you asked for:
+       wallopEl.addEventListener('mouseenter', function() {
+         clearTimeout(nextTimeout);
+       });
+       wallopEl.addEventListener('mouseleave', function() {
+         nextTimeout = setTimeout(function() {
+           loadNext();
+         }, autoPlayMs);
+       });
+    })();
